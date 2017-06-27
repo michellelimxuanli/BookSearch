@@ -22,6 +22,8 @@
             android:name=".activities.BookDetailActivity"
             android:label="@string/title_activity_book_detail" >
         </activity>
+
+
     </application>
 
 </manifest>
