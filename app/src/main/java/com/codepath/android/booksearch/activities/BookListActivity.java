@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -48,7 +49,10 @@ public class BookListActivity extends AppCompatActivity {
         // Set layout manager to position the items
         rvBooks.setLayoutManager(new LinearLayoutManager(this));
 
-        
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        fetchBooks("Oscar Wilde");
     }
 
     // Executes an API call to the OpenLibrary search endpoint, parses the results
@@ -122,7 +126,7 @@ public class BookListActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_search) { //action_settings
             return true;
         }
 
